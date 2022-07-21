@@ -33,13 +33,13 @@ So I can jump the desired folder with a single keypress.
 
 Sometimes switching to the folder is not enough and you want to create
 a dedicated tab for it. In this case you can use the switch `-t` to
-toggle tab mode. As always we transient you can `C-x s` to set the
-switches for the current session or `C-x C-s` to save for future
+toggle tab mode. As always with transient you can use `C-x s` to set
+the switches for the current session or `C-x C-s` to save for future
 sessions. It can be very convenient to set tab mode for a while when
 you are working on 2 projects at the same time and you don't want to
 loose a specific window configuration on the 2 projects.
 
-*TODO
+** TODO
 - complete README
 - better type for defcustom transjump-folders
 - clean code
