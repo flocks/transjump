@@ -4,8 +4,9 @@
 (require 'transient)
 
 (defcustom transjump-folders nil
-  "List of all favorites folders to the transient menu.
-The shape is a plist (:name \"name\" :key 'k' :path \"~/path/to/folder\") "
+  "List of all favorites folders to display in the transient menu.
+The shape is a plist (:name \"name\" :key 'k' :path
+\"~/path/to/folder\") "
   :type '(plist))
 
 (transient-define-prefix transjump (arg)
