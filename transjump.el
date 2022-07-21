@@ -10,7 +10,10 @@ The shape is a plist (:name \"name\" :key 'k' :path \"~/path/to/folder\") "
 
 (defvar transjump--action 'file
   "The action to perform when we activate the prefix.
-either we open the file, or we create/swith to a named tab")
+either we open the file, or we create/swith to a named tab
+
+This variable is set when calling the transient prefix, depending if
+universal-argument was given or not.")
 
 (transient-define-prefix transjump (arg)
   "Transient menu to quickly access favorites folders"
