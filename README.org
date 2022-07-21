@@ -27,7 +27,7 @@ folder a `key` and a `name`.
 
 And transjump will generate a transient menu.
 
-[[https://github.com/flocks/transjump/raw/main/transjump.png]]
+[[https://github.com/flocks/transjump/raw/master/transjump.png]]
 
 So I can jump the desired folder with a single keypress. 
 
