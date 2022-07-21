@@ -1,0 +1,8 @@
+* Transjump
+
+Quickly jump to your favorite folders with transient.el
+
+* TODO
+- write README
+- clean code
+- write tests
