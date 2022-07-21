@@ -2,7 +2,41 @@
 
 Quickly jump to your favorite folders with transient.el
 
+** Motivation
+
+Packages such as projectile.el or even the built-in project.el offer a
+good way to navigate through a lot of differents projects but I felt
+it was a bit slow for the top 3/4 projects I'm constantly working
+on. I'm constantly switching from one project to another and having to
+type `C-x p p` then typing the first letter of the project name was
+too much for me.
+
+** Overview
+
+With transjump, I define a list of favorite folders and attribute to each
+folder a `key` and a `name`.
+
+#+BEGIN_SRC emacs-lisp
+(setq transjump-folders
+		'((:name  "frontend" :key  "f" :path  "~/path/to/front/project")
+		  (:name  "backend" :key  "b" :path  "~/path/to/back/project")
+		  (:name  "home" :key  "h" :path  "~")
+		  (:name  "downloads" :key  "m" :path  "~/Downloads")
+		  (:name  "music" :key  "m" :path  "~/Music")))
+#+END_SRC
+
+And transjump will generate a transient menu.
+
+[[https://github.com/flocks/transjump/raw/main/transjump.png]]
+
+So I can jump the desired folder with a single keypress. 
+
+Sometimes switching to the folder is not enough and you want to create
+a dedicated tab for it. It's what's happening when you use an
+universal prefix argument. If the tab already exists, it just switches
+to it
+
 * TODO
-- write README
+- complete README
 - clean code
 - write tests
