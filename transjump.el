@@ -8,21 +8,14 @@
 The shape is a plist (:name \"name\" :key 'k' :path \"~/path/to/folder\") "
   :type '(plist))
 
-(defvar transjump--action 'file
-  "The action to perform when we activate the prefix.
-either we open the file, or we create/swith to a named tab
-
-This variable is set when calling the transient prefix, depending if
-universal-argument was given or not.")
-
 (transient-define-prefix transjump (arg)
   "Transient menu to quickly access favorites folders"
+  ["Mode"
+   ("-t" "Tab mode" ("-t" "tab"))
+   ]
   [:description "Folders"
-				:setup-children transjump-setup-folders
-				:pad-keys t]
-  (interactive "P")
-  (setq transjump--action (if arg 'tab 'file))
-  (transient-setup 'transjump))
+   :setup-children transjump-setup-folders
+   :pad-keys t])
 
 (defun transjump-setup-folders (_)
   "Generate all suffixes for transjump prefix"
@@ -34,9 +27,9 @@ universal-argument was given or not.")
 			(plist-get folder :name)
 			(lambda ()
 			  (interactive)
-			  (if (eq transjump--action 'file)
-				  (find-file (plist-get folder :path))
-				(transjump--switch-to-tab (plist-get folder :name)))))))
+			  (if (member "tab" (transient-args transient-current-command))
+				  (transjump--switch-to-tab (plist-get folder :name))
+				(find-file (plist-get folder :path)))))))
    transjump-folders))
 
 (defun transjump--switch-to-tab (tab)
