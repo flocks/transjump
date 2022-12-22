@@ -1,3 +1,20 @@
+* DEPRECATED
+
+I no longer use it, but choose a simple solution with ~hydra~. As a result
+I don't even know if it is still working with latest ~transient~ version.
+
+#+BEGIN_SRC emacs-lisp
+(defhydra hydra-jump (evil-motion-state-map "C-e")
+  "Jump"
+  ("f" (lambda () (interactive) (find-file "path/folder/1")))
+  ("v" (lambda () (interactive) (find-file "path/folder/2")))
+  ("r" (lambda () (interactive) (find-file "path/folder/3")))
+  ("d" (lambda () (interactive) (find-file "path/folder/4")))
+  ("h" (lambda () (interactive) (find-file "~"))))
+#+END_SRC
+
+
+
 * Transjump
 
 Quickly jump to your favorite folders with transient.el
